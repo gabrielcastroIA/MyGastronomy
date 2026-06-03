@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "Caldo de Frango Caipira",
+    "preco": 12.99,
+    "disponivel": true,
+    "descricao": "Frango caipira cozido lentamente com legumes frescos e ervas aromáticas, resultando em um caldo rico e reconfortante.",
+    "ingredientes": [
+      "Frango caipira",
+      "Cenoura",
+      "Chuchu",
+      "Salsão",
+      "Cheiro-verde"
+    ],
+    "categoria": "Entrada"
+  },
+  {
+    "nome": "Peixe Assado com Pirão",
+    "preco": 28.5,
+    "disponivel": true,
+    "descricao": "Peixe fresco assado ao forno com azeite e alho, acompanhado de pirão cremoso feito com o caldo do próprio peixe.",
+    "ingredientes": [
+      "Peixe fresco",
+      "Azeite de oliva",
+      "Alho",
+      "Farinha de mandioca",
+      "Limão"
+    ],
+    "categoria": "Principal"
+  },
+  {
+    "nome": "Feijão Tropeiro",
+    "preco": 19.9,
+    "disponivel": false,
+    "descricao": "Receita tradicional mineira com feijão cozido, farofa de mandioca, bacon crocante, couve refogada e ovo mexido.",
+    "ingredientes": [
+      "Feijão carioca",
+      "Bacon",
+      "Farinha de mandioca",
+      "Couve",
+      "Ovo"
+    ],
+    "categoria": "Principal"
+  },
+  {
+    "nome": "Salada de Palmito com Rúcula",
+    "preco": 16,
+    "disponivel": true,
+    "descricao": "Palmito pupunha fresco fatiado sobre rúcula e tomate cereja, temperado com azeite e raspas de limão siciliano.",
+    "ingredientes": [
+      "Palmito pupunha",
+      "Rúcula",
+      "Tomate cereja",
+      "Azeite de oliva",
+      "Limão siciliano"
+    ],
+    "categoria": "Acompanhamento"
+  }
+]
