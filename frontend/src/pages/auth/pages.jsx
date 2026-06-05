@@ -2,11 +2,25 @@ import { useState } from 'react'
 import { TextField, Button } from '@mui/material'
 import styles from './pages.module.css'
 import authServices from '../../services/auth.jsx'
+import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
 
 export default function Home() {
     const [formType, setFormType] = useState('login')
     const [formData, setFormData] = useState(null)
     const { login, signup, authLoading } = authServices()
+    const navigate = useNavigate()
+    
+    const authData = JSON.parse(localStorage.getItem('auth'))
+
+
+    useEffect(() => {
+
+        if (authData) {
+            return navigate('/profile')
+        }
+
+    }, [authData])
 
 
     const handleChangeFormType = () => {
@@ -131,4 +145,6 @@ export default function Home() {
             </>
         )
     }
+
+
 }

@@ -36,7 +36,7 @@ export default function authServices() {
     }
 
     const logout = () => {
-
+        localStorage.removeItem('auth')
     }
 
     const signup = (FormData) => {
