@@ -1,10 +1,41 @@
 * {
-  margin: 0;
-  padding: 0;
-  text-decoration: none; 
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: 'inter';
 }
 
 #root {
-    font-size: x-large;
-    
+	font-size: x-large;
+	background-color: #faf0ca;
+	min-height: 100vh;
+	color: #004643;
+}
+
+main {
+	max-width: 1280px;
+	margin: 0 auto;
+
+}
+
+button {
+	display: flex;
+	gap: 0.5em;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+	background-color: #004643;
+	color: #faf0ca;
+	border: none;
+	padding: 1em;
+	border-radius: 0.5em;
+	cursor: pointer;
+	font-size: medium;
+
+}
+
+p {
+	display: flex;
+	gap: 0.2em;
+	
 }

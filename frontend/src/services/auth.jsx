@@ -1,31 +1,40 @@
 import { useState } from "react"
 
-export default function authServices() {
+
+export default function useAuthServices() {
+
     const [authLoading, setAuthLoading] = useState(false)
 
     const url = 'http://localhost:3000/auth'
 
-    const login = (FormData) => {
+
+    const login = (formData) => {
+
         setAuthLoading(true)
+
         fetch(`${url}/login`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'access-Control-Allow-Origin': '*'
-
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(FormData)
+            body: JSON.stringify(formData)
         })
             .then((response) => response.json())
             .then((result) => {
+
                 console.log(result)
-                if (result.success && result.doby.token) {
+
+                if (result.success && result.body.token) {
 
                     localStorage.setItem(
                         'auth',
-                        JSON.stringify({ token: result.body.token, user: result.body.user })
+                        JSON.stringify({
+                            token: result.body.token,
+                            user: result.body.user
+                        })
                     )
                 }
+
             })
             .catch((error) => {
                 console.log(error)
@@ -34,32 +43,42 @@ export default function authServices() {
                 setAuthLoading(false)
             })
     }
+
+
 
     const logout = () => {
         localStorage.removeItem('auth')
     }
 
-    const signup = (FormData) => {
+
+
+    const signup = (formData) => {
+
         setAuthLoading(true)
+
         fetch(`${url}/signup`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'access-Control-Allow-Origin': '*'
-
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(FormData)
+            body: JSON.stringify(formData)
         })
             .then((response) => response.json())
             .then((result) => {
+
                 console.log(result)
-                if (result.success && result.doby.token) {
+
+                if (result.success && result.body.token) {
 
                     localStorage.setItem(
                         'auth',
-                        JSON.stringify({ token: result.body.token, user: result.body.user })
+                        JSON.stringify({
+                            token: result.body.token,
+                            user: result.body.user
+                        })
                     )
                 }
+
             })
             .catch((error) => {
                 console.log(error)
@@ -69,6 +88,11 @@ export default function authServices() {
             })
     }
 
-    return { signup, login, logout, authLoading }
 
+    return {
+        signup,
+        login,
+        logout,
+        authLoading
+    }
 }

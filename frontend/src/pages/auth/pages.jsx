@@ -1,26 +1,29 @@
 import { useState } from 'react'
-import { TextField, Button } from '@mui/material'
+import { TextField } from '@mui/material'
 import styles from './pages.module.css'
 import authServices from '../../services/auth.jsx'
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
+import { LuLogIn } from "react-icons/lu";
+
+
 
 export default function Home() {
     const [formType, setFormType] = useState('login')
     const [formData, setFormData] = useState(null)
     const { login, signup, authLoading } = authServices()
     const navigate = useNavigate()
-    
+
     const authData = JSON.parse(localStorage.getItem('auth'))
 
 
     useEffect(() => {
 
         if (authData) {
-            return navigate('/profile')
+            navigate('/profile')
         }
 
-    }, [authData])
+    }, [authData, navigate])
 
 
     const handleChangeFormType = () => {
@@ -90,9 +93,7 @@ export default function Home() {
                             name='password'
                             onChange={handleFormDataChange}
                         />
-                        <Button type='submit' disabled={authLoading}>
-                            {authLoading ? 'Loading...' : 'Login'}
-                        </Button>
+                        <button type='submit'>Login<LuLogIn /></button>
                     </form>
                 </div>
             </>
@@ -136,9 +137,7 @@ export default function Home() {
                             name='confirmPassword'
                             onChange={handleFormDataChange}
                         />
-                        <Button type='submit' disabled={authLoading}>
-                            {authLoading ? 'Loading...' : 'Signup'}
-                        </Button>
+                        <button type='submit'>Criar Conta<LuLogIn /></button>
                     </form>
 
                 </div>
