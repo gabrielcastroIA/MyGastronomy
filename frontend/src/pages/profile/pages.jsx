@@ -4,6 +4,8 @@ import authServices from "../../services/auth"
 import useOrderServices from "../../services/order"
 import styles from '../profile/pages.module.css'
 import { LuLogOut, LuTimer, LuCircleAlert, LuCircleCheckBig } from "react-icons/lu";
+import { Link } from "react-router-dom"
+import Loading from "../loading/pages"
 
 
 export default function Profile() {
@@ -25,7 +27,7 @@ export default function Profile() {
     }, [authData, refectOrders])
 
     if (orderLoading) {
-        return (<h1>Carregando...</h1>)
+        return (<Loading/>)
     }
 
 
@@ -65,7 +67,8 @@ export default function Profile() {
                 </div>
                 :
                 <div>
-                    Você ainda não tem ordens
+                    Você ainda não tem ordens.
+                    <Link to={'/plates'} className={styles.platesLink}>Click aqui para ver nossas especialidades</Link>
                 </div>
             }
         </div>

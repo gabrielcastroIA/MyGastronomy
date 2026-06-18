@@ -42,9 +42,9 @@ export default function Navbar() {
 
             >
                 <div className={styles.drawer}>
-                    <Link to="/" className={styles.navbarlink}>Home</Link>
-                    <Link to="/plates" className={styles.navbarlink}>Pratos</Link>
-                    <Link to="/profile" className={styles.navbarlink}>Perfil</Link>
+                    <Link to="/" className={styles.navbarlink} onClick={handleOpenMenu}>Home</Link>
+                    <Link to="/plates" className={styles.navbarlink} onClick={handleOpenMenu}>Pratos</Link>
+                    <Link to="/profile" className={styles.navbarlink} onClick={handleOpenMenu} >Perfil</Link>
                 </div>
             </Drawer>
 

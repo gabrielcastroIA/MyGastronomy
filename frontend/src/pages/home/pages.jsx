@@ -1,7 +1,8 @@
-import styles from './pages.module.css'
-import Dessert from '../../../public/imgs/homepage/dessert'
-import NaturalfFood from '../../../public/imgs/homepage/naturalFood'
-import Vegetable from '../../../public/imgs/homepage/vegetable'
+import styles from '../../pages/home/pages.module.css'
+import Dessert from '../../pages/home/homepage/dessert'
+import NaturalfFood from '../../pages/home/homepage/naturalFood'
+import Vegetable from '../../pages/home/homepage/vegetable'
+import { FaMapMarkerAlt, FaFacebookSquare, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 
 
@@ -27,6 +28,20 @@ export default function Home() {
                     <i><Vegetable /></i>
                     <h4>Opções Vegetarianas</h4>
                     <p>Pratos vegetarianos elaborados com criatividade e cuidado, perfeitos para uma alimentação saudável e saborosa.</p>
+                </div>
+            </section>
+            <section className={styles.contactSection}>
+                <h1>Fique por Dentro!</h1>
+                <p>
+                    Entre no mundo da Minha Gastronomia seguindo-nos nas redes sociais.
+                    Você estará sempre atualizado sobre nossas criações culinárias, eventos especiais
+                    e surpresas gastronômicas. Não perca nenhum detalhe!
+                </p>
+                <div className={styles.socialButtonsContainer}>
+                    <button className={styles.socialButton}><FaInstagram /> Instagram</button>
+                    <button className={styles.socialButton}><FaFacebookSquare /> Facebook</button>
+                    <button className={styles.socialButton}><FaWhatsapp /> WhatsApp</button>
+                    <button className={styles.socialButton}><FaMapMarkerAlt /> Localização</button>
                 </div>
             </section>
         </div>
